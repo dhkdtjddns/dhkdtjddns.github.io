@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Apple 소개 앱</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+/* 전체 배경과 폰트 */
+body { 
+    background: #f9f9f9; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1d1d1f; 
+    margin:0; 
+    padding:0;
+}
+
+/* 일반 리스트 제거 */
+li { list-style:none; }
+
+/* 갤러리 스타일 */
+.picture { 
+    list-style:none; 
+    padding:0; 
+    margin:0; 
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.picture li { 
+    width:48%; 
+    margin-bottom:12px;
+}
+.picture li a {
+    display:block; 
+    border-radius:20px; 
+    overflow:hidden; 
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.picture li img { 
+    display:block; 
+    width:100%; 
+    height:auto; 
+    transition: transform 0.3s ease;
+}
+.picture li img:hover { 
+    transform:scale(1.05); 
+    box-shadow:0 6px 20px rgba(0,0,0,0.12); 
+}
+
+/* jQuery Mobile 페이지 배경 */
+.ui-page, .ui-content { background: #fff !important; }
+
+/* 헤더/푸터 스타일 */
+.ui-header, .ui-footer { 
+    background: #ffffff !important; 
+    color: #1d1d1f !important; 
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* 리스트뷰 바 */
+.ui-bar-a, .ui-bar-b, .ui-bar-e { 
+    background:#f2f2f7 !important; 
+    color:#1d1d1f !important; 
+    border:none; 
+    border-radius:15px;
+    padding:10px 14px;
+    margin-bottom:10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* 버튼/링크 스타일 */
+a.ui-btn {
+    border-radius: 16px !important;
+    background: #007aff !important; /* iOS 블루 */
+    color: #fff !important;
+    font-weight: 500;
+    text-transform: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+a.ui-btn:hover {
+    background: #005bb5 !important;
+    transform: translateY(-2px);
+}
+
+/* 전체 컨텐츠 카드 느낌 */
+.ui-content { 
+    padding: 20px !important;
+}
+</style>
+</head>
+
+<body>
+<div data-theme="a">
+	<!-- 홈 -->
+	<div data-role="page" id="home">
+		<div data-role="header">
+			<h1>Apple 소개 앱</h1>
+		</div>
+		<div data-role="content" style="text-align:center">
+			<img src="스크린샷%202025-10-01%20140656.png" alt="Apple Logo" width="10%">
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#intro" class="ui-btn">Apple 소개</a></li>
+				<li><a href="#movie" class="ui-btn">홍보 영상</a></li>
+				<li><a href="#products" class="ui-btn">제품</a></li>
+				<li><a href="#gallery" class="ui-btn">갤러리</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h1>Apple</h1>
+		</div>
+	</div>
+	
+	<!-- 소개 -->
+	<div data-role="page" id="intro">
+		<div data-role="header">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>			
+			<h1>Apple 소개</h1>
+		</div>
+		<div data-role="content">
+			<div style="text-align:center">
+				<img src="스크린샷%202025-10-01%20141705.png" alt="Apple HQ" width="50%">
+			</div>			
+			<div data-role="collapsible-set">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>역사</h3>
+					<p>
+						Apple은 1976년 스티브 잡스, 스티브 워즈니악, 로널드 웨인에 의해 작은 차고에서 시작되었습니다. 
+						초기에는 개인용 컴퓨터인 Apple I과 Apple II를 통해 시장에 진입했으며, 이후 1984년 매킨토시 출시로 GUI 시대를 열었습니다.  
+						2000년대 들어서는 아이팟과 아이튠즈로 음악 산업을 혁신했고, 2007년 아이폰 출시로 스마트폰 시장을 완전히 바꿨습니다. 
+						아이패드와 맥북, 애플 실리콘 칩으로 하드웨어와 소프트웨어의 완벽한 통합을 이루었으며, 
+						현재는 Apple Watch, AirPods, Apple Music, iCloud, App Store 등으로 세계 최고의 IT 기업으로 자리매김했습니다.
+					</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>비전</h3>
+					<p>
+						Apple의 비전은 단순히 제품을 만드는 것을 넘어 "세상을 더 나은 곳으로 만드는 것"입니다.  
+						디자인과 기술의 조화를 통해 사람들의 일상에 편리함과 즐거움을 제공하며, 하드웨어·소프트웨어·서비스가 통합된 생태계를 제공합니다.  
+						또한 친환경 경영과 재활용 소재, 재생에너지 확대를 통해 지속 가능한 미래를 추구하며, 기술과 사회 모두에 긍정적인 영향을 주는 글로벌 리더를 지향합니다.
+					</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>문화</h3>
+					<p>
+						Apple의 기업 문화는 창의성, 단순함, 혁신 중심입니다.  
+						직원들은 자유롭고 개방적인 환경에서 협업하며, 아이디어를 실험하고 발전시킬 수 있습니다.  
+						다양성과 포용성을 존중하며, 도전을 두려워하지 않는 문화 덕분에 세계적으로 사랑받는 브랜드로 성장했습니다.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h1>Apple</h1>
+		</div>		
+	</div>
+	
+	<!-- 홍보 영상 -->
+	<div data-role="page" id="movie">
+		<div data-role="header" data-position="fixed">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>Apple 홍보 영상</h1>
+		</div>
+		<div data-role="content">
+			<video controls width="100%" preload="metadata">
+				<source src="KakaoTalk_20251001_142416890.mp4" type="video/mp4">
+				브라우저가 video 태그를 지원하지 않습니다.
+			</video>
+		</div>
+	</div>
+	
+	<!-- 제품 -->
+	<div data-role="page" id="products">
+		<div data-role="header">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>Apple 제품</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" data-inset="true">
+				<li>iPhone</li>
+				<li>iPad</li>
+				<li>MacBook</li>
+				<li>Apple Watch</li>
+				<li>AirPods</li>
+			</ul>	
+			<img src="스크린샷%202025-10-01%20142743.png" alt="Apple Products" width="100%">
+		</div>
+	</div>
+	
+	<!-- 갤러리 -->
+	<div data-role="page" id="gallery">
+		<div data-role="header" data-position="fixed">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>Apple 최신 기기 갤러리</h1>
+		</div>
+		<div data-role="content">
+			<ul class="picture">
+				<li><a href="스크린샷%202025-10-01%20143014.png" rel="external"><img src="스크린샷%202025-10-01%20143014.png" /></a></li>	
+				<li><a href="스크린샷%202025-10-01%20143032.png" rel="external"><img src="스크린샷%202025-10-01%20143032.png" /></a></li>	
+				<li><a href="스크린샷%202025-10-01%20143049.png" rel="external"><img src="스크린샷%202025-10-01%20143049.png" /></a></li>	
+				<li><a href="스크린샷%202025-10-01%20143100.png" rel="external"><img src="스크린샷%202025-10-01%20143100.png" /></a></li>	
+			</ul>
+		</div>
+	</div>
+</div>	
+</body>
+</html>
